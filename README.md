@@ -1,40 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sheep Counter App
 
-## Getting Started
+This is a simple **Sheep Counter** application built using **Next.js** and **React**. The app displays a count of sheep that starts at 10 and increments by 1 each time the "More Sheep" button is clicked. This example demonstrates how to use the `useState` hook for managing state in React.
 
-First, run the development server:
+See the file: src/pages/sheep/index.js
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+- Displays the current count of sheep.
+- Button to increment the count by 1.
+- The count is maintained using the `useState` hook in React.
+
+## Code Overview
+
+### Key Parts of the Code:
+- **State Management**: 
+  - The sheep count is managed using the `useState` hook. 
+  - The initial count is set to `10`.
+  
+  ```js
+  const [count, setCount] = useState(10);
+  ```
+
+- **Increment Function**:
+  - The `handleClick` function increments the current count by 1 when the "More Sheep" button is clicked.
+  
+  ```js
+  function handleClick() {
+    setCount(count + 1);
+  }
+  ```
+
+### Example Code:
+```js
+import { useState } from 'react';
+
+export default function SheepCounterPage() {
+  const [count, setCount] = useState(10);
+
+  function handleClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      <h1>Hello Sheep!!!!!</h1>
+      <div>
+        <h3>You have {count} sheep.</h3>
+        <button onClick={handleClick}>More Sheep</button>
+      </div>
+    </div>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Run
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. **Clone the repository**:
+   ```bash
+   git clone <repo-url>
+   ```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+2. **Navigate to the project directory**:
+   ```bash
+   cd <project-directory>
+   ```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
 
-## Learn More
+5. Open your browser and go to `http://localhost:3000/sheep` to view the Sheep Counter app.
 
-To learn more about Next.js, take a look at the following resources:
+## How to Use
+- Click the "More Sheep" button to increase the sheep count by 1.
+- The updated count will be displayed on the screen.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+This project is open source and available under the MIT License. Feel free to use and modify the code!
