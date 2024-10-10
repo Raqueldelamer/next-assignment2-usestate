@@ -3,7 +3,7 @@ import {useState} from 'react';
 export default function SheepCounterPage(){
   // Use State here.
   // Declare state with useState
-  const [count, setCount] = useState(10);
+  const [count, setCount] = useState(0);
   // Don't declare state with a regular variable
   // let count = 10; 
 
@@ -24,29 +24,4 @@ export default function SheepCounterPage(){
     </div>
   </div>);
 
-}
-import { useState } from 'react';
-
-export default function MyApp() {
-  return (
-    <div>
-      <h1>Counters that update separately</h1>
-      <MyButton />
-      <MyButton />
-    </div>
-  );
-}
-
-function MyButton() {
-  const [count, setCount] = useState(0);
-
-  function handleClick() {
-    setCount(count + 1);
-  }
-
-  return (
-    <button onClick={handleClick}>
-      Clicked {count} times
-    </button>
-  );
 }
